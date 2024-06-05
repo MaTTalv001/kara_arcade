@@ -28,7 +28,7 @@ const Mekuri = () => {
 
   const post = {
     title: "からあげアゲイン",
-    url: "https://karaage-again.vercel.app/karaagame",
+    url: "https://kara-arcade.vercel.app/karaagame",
   };
 
   const handleTweet = () => {

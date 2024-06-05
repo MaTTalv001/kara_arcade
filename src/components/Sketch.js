@@ -5,7 +5,7 @@ import { Block } from './Block';
 
 const post = {
   title: "からあげ積み増しタワー",
-  url: "https://karaage-tsumi.vercel.app/",
+  url: "https://kara-arcade.vercel.app/karaagame",
 };
 
 // ツイート共有機能
