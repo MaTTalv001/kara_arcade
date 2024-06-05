@@ -159,6 +159,7 @@ const Sketch = () => {
         p.textSize(20);
         p.textAlign(p.CENTER, p.CENTER);
         p.text("Xでシェア", p.width / 2, p.height / 2 + 125);
+        p.text("スマホ非対応", p.width / 2, p.height / 2 + 175);
 
         if (p.mouseIsPressed) {
           if (p.mouseX > p.width / 2 - 50 && p.mouseX < p.width / 2 + 50 && p.mouseY > p.height / 2 + 25 && p.mouseY < p.height / 2 + 75) {
@@ -221,7 +222,7 @@ const Sketch = () => {
       // 新しいブロックの生成
       function newBlock() {
         let x = p.random(40, p.width - 40);
-        currentBlock = new Block(x, 40, 60, 40, world, blockImage);
+        currentBlock = new Block(x, 40, 30, 30, world, blockImage);
         blocks.push(currentBlock);
         Matter.Events.on(engine, 'collisionStart', checkCollision);
       }
@@ -255,11 +256,11 @@ const Sketch = () => {
       }
     };
 
-    new p5(Sketch);
+    const sketchInstance = new p5(Sketch);
 
     return () => {
-      document.removeEventListener('keydown', Sketch.prototype.keyPressed);
-      window.removeEventListener('keydown', Sketch.prototype.keyPressed);
+      // イベントリスナーを適切に削除
+      window.removeEventListener('keydown', sketchInstance.keyPressed);
     };
   }, []);
 

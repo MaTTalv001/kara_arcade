@@ -24,14 +24,6 @@ const KaraaGame = () => {
   // サンプルデータ
   const GamePath = [
     {
-      title: "リストランテからあげ",
-      image_url: "/assets/imgs/game/retrogame.png",
-      description:
-        "プレイヤーは、レシピに従って迅速にからあげを調理するシェフとなります。タイムマネジメントと正確なレシピが成功の鍵。",
-      url: RoutePath.recipegame.path,
-      isDevelopment: false,
-    },
-    {
       title: "からあげめくり",
       image_url: "/assets/imgs/game/karaagemekuri.png",
       description:
@@ -45,6 +37,14 @@ const KaraaGame = () => {
       description:
         "天を衝く巨大な塔の前に、神々しき翼を広げる巨大なからあげの守護者。積み上げられたからあげの塔は、挑戦者たちの魂と技を試す場となる",
       url: RoutePath.tower.path,
+      isDevelopment: false,
+    },
+    {
+      title: "リストランテからあげ",
+      image_url: "/assets/imgs/game/retrogame.png",
+      description:
+        "プレイヤーは、レシピに従って迅速にからあげを調理するシェフとなります。タイムマネジメントと正確なレシピが成功の鍵。",
+      url: RoutePath.recipegame.path,
       isDevelopment: false,
     },
     {

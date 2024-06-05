@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Sketch from '../components/Sketch';
+import { Link } from "react-router-dom";
+import { RoutePath } from "utils/RouteSetting";
 
 function KaraageTower() {
 
@@ -19,9 +21,13 @@ function KaraageTower() {
   return (
     <div className="App min-h-screen bg-base-200">
       <header>
-        <div className="navbar bg-base-100 shadow-lg">
-          <a className="btn btn-ghost normal-case text-xl">からあげ積み増しタワー</a>
-          <a>矢印キーか画面タップで操作.現在スマホはXシェア起動しないかも..</a>  
+        <div className="pt-20 px-10">
+          <Link
+            to={RoutePath.karaagame.path}
+            className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-md dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800"
+          >
+            ゲームセレクトに戻る
+          </Link>
         </div>
       </header>
       <div className="flex justify-center items-center mt-10">      
