@@ -1,5 +1,4 @@
 import HomePage from "pages/HomePage";
-import MainPage from "pages/MainPage";
 import KaraaGame from "pages/KaraaGame";
 import RecipeGame from "pages/RecipeGame";
 import { PrivacyPolicy } from "pages/static/PrivacyPolicy";
@@ -12,7 +11,6 @@ import Tower from "pages/KaraageTower";
 const Path = {
   home: "/",
   signup: "/signup",
-  mainpage: "/mainpage",  
   karaagame: "/karaagame",
   recipegame: "/recipegame",
   privacypolicy: "/privacypolicy",
@@ -26,10 +24,6 @@ export const RouteSetting = [
   {
     path: Path.home,
     component: <HomePage />,
-  },
-  {
-    path: Path.mainpage,
-    component: <MainPage />,
   },
   {
     path: Path.karaagame,
@@ -63,10 +57,6 @@ export const RoutePath = {
   home: {
     path: Path.home,
     name: "KARAAGE AGAIN",
-  },
-  mainpage: {
-    path: Path.mainpage,
-    name: "メインメニュー",
   },
   karaagame: {
     path: Path.karaagame,
