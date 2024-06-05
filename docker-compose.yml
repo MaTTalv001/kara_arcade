@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build: .
+    image: karaage_again
+    ports:
+      - "3666:3000"
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    environment:
+      - NODE_ENV=development
