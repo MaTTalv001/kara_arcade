@@ -48,6 +48,14 @@ const KaraaGame = () => {
       isDevelopment: false,
     },
     {
+      title: "からあげ様は揚げられたい",
+      image_url: "/assets/imgs/game/karaagesama.png",
+      description:
+        "恋愛は揚げた方が負けなのである。己を燃やすは情熱の油か、それとも永遠の冷凍庫か――！？",
+      url: "https://karaageotoko.vercel.app/",
+      isDevelopment: false,
+    },
+    {
       title: "からあげ出口（開発予定）",
       image_url: "/assets/imgs/game/karaageexit.jpg",
       description:
