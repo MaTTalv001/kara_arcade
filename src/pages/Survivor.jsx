@@ -239,7 +239,7 @@ const Survivor = () => {
       
     {!isGameStarted ? (
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-        <h1 className="text-5xl font-bold text-white mb-8 text-shadow">からあげサバイバー</h1>
+        <h1 className="text-5xl font-bold text-white mb-8 text-shadow">からあげサバイバーズ</h1>
         <button 
           className="px-10 py-5 text-2xl bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           onClick={handleStartGame}
