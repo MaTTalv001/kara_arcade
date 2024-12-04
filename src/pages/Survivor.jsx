@@ -53,9 +53,9 @@ const Survivor = () => {
   };
 
   const handleTweet = () => {
-    const tweetText = `【からあげサバイバー】${timeElapsed}秒間生き残りました！`;
+    const tweetText = `【からあげサバイバーズ】${timeElapsed}秒間生き残ったぞ・・・`;
     const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-      `localhost:3000`)}
+      `https://kara-arcade.vercel.app/survivor`)}
       &text=${encodeURIComponent(tweetText)}`;
     window.open(twitterUrl, "_blank");
 };
