@@ -6,6 +6,7 @@ import { TermsOfService } from "pages/static/TermsOfService";
 import SandBox from "pages/sandbox/SandBox";
 import Mekuri from "pages/Mekuri";
 import Tower from "pages/KaraageTower";
+import Survivor from "pages/Survivor";
 
 
 const Path = {
@@ -18,6 +19,7 @@ const Path = {
   sandbox: "/sandbox",
   mekuri: "/mekuri",
   tower: "/tower",
+  survivor: "/survivor"
 };
 
 export const RouteSetting = [
@@ -50,6 +52,9 @@ export const RouteSetting = [
   },
    {path: Path.tower,
     component: <Tower />,
+  },
+   {path: Path.survivor,
+    component: <Survivor />,
   },
 ];
 
@@ -85,5 +90,9 @@ export const RoutePath = {
   tower: {
     path: Path.tower,
     name: "からあげ積み増しタワー",
+  },
+  survivor: {
+    path: Path.survivor,
+    name: "からあげサバイバーズ",
   },
 };

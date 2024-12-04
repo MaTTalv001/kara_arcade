@@ -56,6 +56,14 @@ const KaraaGame = () => {
       isDevelopment: false,
     },
     {
+      title: "カラアゲサバイバーズ",
+      image_url: "/assets/imgs/game/Karaagesurvivor.png",
+      description:
+        "押し寄せる吸血唐揚げの猛襲から生き延びろ",
+      url: RoutePath.survivor.path,
+      isDevelopment: false,
+    },
+    {
       title: "からあげ出口（開発予定）",
       image_url: "/assets/imgs/game/karaageexit.jpg",
       description:
