@@ -8,6 +8,8 @@ import { RoutePath } from "utils/RouteSetting";
 
 
 const Survivor = () => {
+  // BGMの状態管理を追加
+  const [bgmAudio, setBgmAudio] = useState(null);
   const gameAreaRef = useRef(null);
   const [player, setPlayer] = useState({ x: 250, y: 250, direction: 'right' });
   const [enemies, setEnemies] = useState([]);
@@ -17,6 +19,7 @@ const Survivor = () => {
   const [enemyIntervalTime, setEnemyIntervalTime] = useState(1000);
   const [timeElapsed, setTimeElapsed] = useState(0);
   const playerPosRef = useRef({ x: 250, y: 250, direction: 'right' });
+  const [bgm] = useState(new Audio('/sounds/survivor.mp3'));
 
   const handleKeyDown = (e) => {
     if (isGameOver || !isGameStarted) return;
@@ -116,6 +119,21 @@ const Survivor = () => {
       clearInterval(bulletMoveInterval);
     };
   }, [isGameOver, isGameStarted]);
+
+  useEffect(() => {
+    const audio = new Audio('/sounds/survivor_bgm.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    setBgmAudio(audio);
+
+    return () => {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    };
+  }, []);
+
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -218,8 +236,18 @@ const Survivor = () => {
     playerPosRef.current = { x: 250, y: 250, direction: 'right' };
     setTimeElapsed(0);
     setEnemyIntervalTime(1000);
+     if (bgmAudio) {
+      bgmAudio.play().catch(e => console.log('BGM playback failed:', e));
+    }
+
   };
 
+  useEffect(() => {
+    if (isGameOver && bgmAudio) {
+      bgmAudio.pause();
+      bgmAudio.currentTime = 0;
+    }
+  }, [isGameOver, bgmAudio]);
   return (
     <>
       <header>
@@ -239,14 +267,15 @@ const Survivor = () => {
       
     {!isGameStarted ? (
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-        <h1 className="text-5xl font-bold text-white mb-8 text-shadow">からあげサバイバーズ</h1>
-        <button 
-          className="px-10 py-5 text-2xl bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-          onClick={handleStartGame}
-        >
-          スタート
-        </button>
-      </div>
+  <h1 className="text-5xl font-bold text-white mb-8 text-shadow">からあげサバイバーズ</h1>
+  <p className="text-xl text-white mb-6">矢印キーで移動 → ← ↑ ↓</p>
+  <button 
+    className="px-10 py-5 text-2xl bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+    onClick={handleStartGame}
+  >
+    スタート
+  </button>
+</div>
     ) : !isGameOver ? (
       <>
         <div className="absolute top-2.5 left-2.5 text-2xl text-white">
