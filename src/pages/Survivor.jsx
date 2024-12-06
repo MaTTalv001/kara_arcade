@@ -145,7 +145,7 @@ const Survivor = () => {
     useEffect(() => {
       const audio = new Audio('/sounds/survivor_bgm.mp3');
       audio.loop = true;
-      audio.volume = 0.5;
+      audio.volume = 0.2;
       setBgmAudio(audio);
 
       return () => {
